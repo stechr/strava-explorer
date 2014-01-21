@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>What's on strava ?!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+
+			<!-- Static navbar -->
+			<div class="navbar navbar-default" role="navigation">
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			      <span class="sr-only">Toggle navigation</span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			    </button>
+			    <a class="navbar-brand" href="/">Strava Explorer</a>
+			  </div>
+			  <div class="navbar-collapse collapse">
+			    <ul class="nav navbar-nav">
+			      <li><a href="/views/me">Me</a></li>
+			      <li><a href="/views/friends">My friends</a></li>
+			      <li><a href="/views/followers">My Followers</a></li>
+			      <li><a href="/views/koms">KOMS</a></li>
+			      <li><a href="/views/activities">Activities</a></li>
+			    </ul>
+			    <ul class="nav navbar-nav navbar-right">
+			    	<a href="/auth/strava"><img src="http://strava.github.io/api/images/LogInWithStrava.png"></a>
+			    </ul>
+			  </div><!--/.nav-collapse -->
+			</div>
+
+			<div>
+			      <%if @error then %>
+			          <div class="alert alert-error"><%=@error%></div>
+			      <% end %>
+			      <%= yield %>
+			</div>
+
+	</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/vendor/jquery-1.9.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
